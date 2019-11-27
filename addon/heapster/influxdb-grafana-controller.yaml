@@ -40,8 +40,10 @@ spec:
           ports:
             - name: http
               containerPort: 8083
+              hostPort: 8083
             - name: api
               containerPort: 8086
+              hostPort: 8083
           volumeMounts:
           - name: influxdb-persistent-storage
             mountPath: /data
@@ -75,6 +77,7 @@ spec:
           ports:
           - name: ui
             containerPort: 3000
+            hostPort: 3000
           volumeMounts:
           - name: grafana-persistent-storage
             mountPath: /var
